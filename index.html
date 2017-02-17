@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <!--<script type="text/javascript" src="jquery.md5.js"></script>-->
+    <script type="text/javascript" src="md5-min.js" ></script>
+</head>
+<body>
+	<input type="text" id="txt" value=""/>
+	<script type="text/javascript">
+	$("#txt").focus();
+//	alert($.md5("Hello"));
+//		$("#txt").blur(function(evt){
+//;			var value = $(this).val();
+//			console.log(hex_md5(value));
+//		})
+		$("#txt").keyup(function(evt){
+			var e = evt || window.event;
+			if(e.which==13){
+				var value = $(this).val();
+				console.log(hex_md5(value));
+				$(this).blur();
+			}
+		})
+	</script>
+</body>
+</html>
