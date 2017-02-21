@@ -8,6 +8,7 @@
 </head>
 <body>
 	<input type="text" id="txt" value=""/>
+	<textarea id="show"></textarea>
 	<script type="text/javascript">
 	$("#txt").focus();
 //	alert($.md5("Hello"));
@@ -15,11 +16,13 @@
 //;			var value = $(this).val();
 //			console.log(hex_md5(value));
 //		})
+		//var show = document.querySelector("#show");
 		$("#txt").keyup(function(evt){
 			var e = evt || window.event;
 			if(e.which==13){
 				var value = $(this).val();
-				console.log(hex_md5(value));
+//                              console.log(hex_md5(value));
+				$("#show").html(hex_md5(value))
 				$(this).blur();
 			}
 		})
